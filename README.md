@@ -1,5 +1,6 @@
 # Next-test
-This test create by nextjs 14
+This test created by next.js 14
+
 ```bash
 to install package
 npm install
@@ -7,6 +8,7 @@ npm install
 yarn install
 
 /////
+
 to run project
 npm run dev
 # or
