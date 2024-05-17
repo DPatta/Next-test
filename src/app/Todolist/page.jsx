@@ -52,13 +52,51 @@ export default function TodoList() {
   const [vegetableItems, setVegetableItems] = useState([]);
 
   const handleAllItem = (item) => {
-    setItems(items.filter((AllItem) => AllItem.name !== item.name));
+    setItems((AllItem) => AllItem.filter((i) => i.name !== item.name));
+
     if (item.type === "Fruit") {
       setFruitItems([...fruitItems, item]);
+      setTimeout(() => {
+        setFruitItems((prevFruitItems) =>
+          prevFruitItems.filter((i) => i.name !== item.name)
+        );
+        setItems((AllItem) => [...AllItem, item]);
+      }, 5000)
     } else {
       setVegetableItems([...vegetableItems, item]);
+      setTimeout(() => {
+        setVegetableItems((prevVegetableItems) =>
+          prevVegetableItems.filter((i) => i.name !== item.name)
+        );
+        setItems((AllItem) => [...AllItem, item]);
+      }, 5000);
     }
   };
+
+  // const moveItem = (item) => {
+  //   setItems((prevItems) => prevItems.filter((i) => i.name !== item.name));
+
+  //   if (item.type === "Fruit") {
+  //     setFruitItems((prevFruitItems) => [...prevFruitItems, item]);
+  //     setTimeout(() => {
+  //       setFruitItems((prevFruitItems) =>
+  //         prevFruitItems.filter((i) => i.name !== item.name)
+  //       );
+  //       setItems((prevItems) => [...prevItems, item]);
+  //     }, 5000);
+  //   } else {
+  //     setVegetableItems((prevVegetableItems) => [
+  //       ...prevVegetableItems,
+  //       item,
+  //     ]);
+  //     setTimeout(() => {
+  //       setVegetableItems((prevVegetableItems) =>
+  //         prevVegetableItems.filter((i) => i.name !== item.name)
+  //       );
+  //       setItems((prevItems) => [...prevItems, item]);
+  //     }, 5000);
+  //   }
+  // };
 
   const handleItem = (item) => {
     setItems([...items, item]);
