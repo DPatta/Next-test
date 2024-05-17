@@ -73,30 +73,6 @@ export default function TodoList() {
     }
   };
 
-  // const moveItem = (item) => {
-  //   setItems((prevItems) => prevItems.filter((i) => i.name !== item.name));
-
-  //   if (item.type === "Fruit") {
-  //     setFruitItems((prevFruitItems) => [...prevFruitItems, item]);
-  //     setTimeout(() => {
-  //       setFruitItems((prevFruitItems) =>
-  //         prevFruitItems.filter((i) => i.name !== item.name)
-  //       );
-  //       setItems((prevItems) => [...prevItems, item]);
-  //     }, 5000);
-  //   } else {
-  //     setVegetableItems((prevVegetableItems) => [
-  //       ...prevVegetableItems,
-  //       item,
-  //     ]);
-  //     setTimeout(() => {
-  //       setVegetableItems((prevVegetableItems) =>
-  //         prevVegetableItems.filter((i) => i.name !== item.name)
-  //       );
-  //       setItems((prevItems) => [...prevItems, item]);
-  //     }, 5000);
-  //   }
-  // };
 
   const handleItem = (item) => {
     setItems([...items, item]);
